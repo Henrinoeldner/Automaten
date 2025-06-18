@@ -27,7 +27,12 @@ public class Analyse {
         scanner.scanne();
         tokenliste=scanner.getTokenlist();
         if (tokenliste!=null){
-            parser.parse();
+            if(parser.parse()){
+                System.out.println("Das Wort endspricht der Grammatik");
+            }else{
+                System.out.println("Das Wort endspricht nicht der Grammatik");
+                System.out.println("");
+            }
         }
     }
 }

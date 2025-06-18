@@ -31,6 +31,7 @@ public class Parser {
 
     public boolean pruefeS(){
         if (tokenlist.getContent().getWert().equals("la")||tokenlist.getContent().getWert().equals("le")||tokenlist.getContent().getWert().equals("lu")){
+            tokenlist.next();
             return pruefeA();
         }
         fehler=false;
@@ -38,13 +39,14 @@ public class Parser {
     }
     public boolean pruefeA(){
         if (tokenlist.getContent().getWert().equals("la")||tokenlist.getContent().getWert().equals("le")||tokenlist.getContent().getWert().equals("lu")){
+            tokenlist.next();
             return pruefeB();
         }
         fehler=false;
         return false;
     }
     public boolean pruefeB(){
-        if (tokenlist.getContent().getWert().equals("lu")&&nextToken()==null){
+        if (tokenlist.getContent().getWert().equals("lu") && this.nextToken()==null){
             return true;
         }
         fehler=false;
