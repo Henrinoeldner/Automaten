@@ -34,6 +34,7 @@ public class Parser {
             tokenlist.next();
             return pruefeA();
         }
+        System.out.println("Das Element '"+ tokenlist.getContent().getWert()+"' an der Stelle "+tokenlist.getContent().getTyp()+" ist nicht korrekt. Erwartet 'la','le' oder 'lu'");
         fehler=false;
         return false;
     }
@@ -42,12 +43,18 @@ public class Parser {
             tokenlist.next();
             return pruefeB();
         }
+        System.out.println("Das Element '"+ tokenlist.getContent().getWert()+"' an der Stelle "+tokenlist.getContent().getTyp()+" ist nicht korrekt. Erwartet 'la','le' oder 'lu'");
         fehler=false;
         return false;
     }
     public boolean pruefeB(){
         if (tokenlist.getContent().getWert().equals("lu") && this.nextToken()==null){
             return true;
+        }
+        if (!tokenlist.getContent().getWert().equals("lu")){
+            System.out.println("Das Element '" + tokenlist.getContent().getWert() + "' an der Stelle " + tokenlist.getContent().getTyp() + " ist nicht korrekt. Erwartet 'lu'");
+        }else{
+            System.out.println("Das Element '" + nextToken().getWert() + "' an der Stelle 4 ist nicht korrekt. Erwartet null");
         }
         fehler=false;
         return false;

@@ -14,8 +14,9 @@ public class Scannerh {
         for (int i=0;i<eingabe.length();i+=2){
             String speicher=eingabe.substring(i,i+2);
            if(speicher.equals("la")||speicher.equals("le")||speicher.equals("lu")){
-               tokenlist.append(new Token(speicher,""));
+               tokenlist.append(new Token(speicher, ""+(i+2)/2));
            }else{
+               System.out.println("Das Element '"+speicher+"' an der Stelle "+(i+2)/2+" entspricht nicht dem berechtigen Eingabe Alphabet. Erwartet 'la','le' oder 'lu'");
                fehler=true;
                break;
            }
