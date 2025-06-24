@@ -47,6 +47,8 @@ public class Parser {
         fehler=false;
         return false;
     }
+
+
     public boolean pruefeB(){
         if (tokenlist.getContent().getWert().equals("lu") && this.nextToken()==null){
             return true;
